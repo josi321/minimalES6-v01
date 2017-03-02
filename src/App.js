@@ -54,14 +54,7 @@ export default class App{
           this.shoppingCartView.cartshow(this.products,this);
 
 
-          //these are just the click to open popups
-        // $(document).on("click",".close",this,function(){$(".itemAddedToCart").fadeOut()});
-        // $(document).on("click",".close",this,function(){$(".subcriptionThankyou").fadeOut()});
-        // $(document).on("click",".submit",this,function(){$(".subcriptionThankyou").fadeIn()});
-        //
-        // $(document).on("click",".close",this,function(){$(".ShoppingCart").fadeOut()});
-        //
-        // $(document).on("click",".close",this,function(){$(".quickView").fadeOut()});
+          
 
       }
 

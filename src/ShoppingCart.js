@@ -46,7 +46,7 @@ export default class ShoppingCart{
 
 
     removeItemFromCart(theApp){
- console.log("lets run");
+ console.log("going to remove item! ");
 
 
      for (let i=0; i<sessionStorage.length; i++) {
@@ -74,10 +74,10 @@ console.log(theSku);
 
     sessionStorage.setItem("Quantity",newQuantity);
     let current_val = sessionStorage.getItem("Quantity");
-    $("#counter").val(current_val);
+    $("#cartQty").val(current_val);
     if (parseInt(current_val) == 0){
         sessionStorage.clear();
-        $("#counter").hide();
+        $("#cartQty").hide();
         $(".ShoppingCart").hide();
         $(document).on("click",".cartlogo",this,function(){$(".ShoppingCart").hide()});
     }
@@ -106,7 +106,7 @@ console.log(theSku);
             let current_qty = sessionStorage.getItem(currentSku);
             // console.log(currentSku);
         if (currentSku !== "Quantity"){
-            let inputvalue= document.getElementById("QQv_"+currentSku).value;
+            let inputvalue= document.getElementById("Qv_"+currentSku).value;
             this.theDeleteButton = document.getElementById(currentSku);
             console.log(this.theDeleteButton);
             // console.log(inputvalue);
@@ -121,7 +121,7 @@ console.log(theSku);
                 console.log(newQuantity);
                 sessionStorage.setItem("Quantity",newQuantity);
                 let current_val = sessionStorage.getItem("Quantity");
-                $("#counter").val(current_val);
+                $("#cartQty").val(current_val);
                 theApp.shoppingCartView.cartshow(products,theApp);
 
 

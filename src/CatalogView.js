@@ -185,9 +185,10 @@ export default class CatalogView{
           let img = currentProducts.image;
           let name = currentProducts.name;
           let price = currentProducts.regularPrice;
-        output = `<div class="Item-content flex">
+          
+        output = `<div class="Item-content">
                     <div class="close">
-                       <img class='cartimage' height="300" width="300" src=${img}>
+                       <img class="cartimage" height="300" width="300" src=${img}>
                     </div >
                     <div class=" textcenter">
                         <h3 class="black"> ${name}</h3>

@@ -34,6 +34,23 @@
         </div>
       </header>
 
+      <!--  SHOPPING CART BASKET DISPLAY-->
+      <section class="ShoppingCart">
+          <div>
+            <p class= "urCart textcenter"> Your Cart </p>
+          </div>
+
+          <div class="shoppingCartInfo marginleftright10"></div>
+
+             <div class="marginleftright10">
+                 <button id="clearSessionStorage"> Clear Cart </button>
+                  <button class="close closeCart" type="button"> Close </button>
+                 <button id="updateCart"> Update Cart </button>
+                 <button id="GoToCheckOut">  Checkout  </button>
+             </div>
+             <div class="shoppingCartTotal flex font25"></div>
+      </section>
+
 <!-- BANNER SECTION -->
 <section class="banner">
   <div class="container banner-text">
@@ -84,12 +101,15 @@
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
            <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
      <!-- PRODUCTS SECTION -->
+
         <section id="products" class="container">
           <div class="product-header">
             <h3>You like stuff?</h3>
             <h5> We got stuff</h5>
           </div>
+          <div class="quickView close"></div>
           <div class="owl-carousel owl-theme centerStuff"></div>
+
         </section>
 
        <!-- SUBSCRIPTION SECTION -->
