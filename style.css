@@ -1,0 +1,717 @@
+/*GENERAL STYLES*/
+* {
+   box-sizing: border-box;
+   outline: none;
+}
+
+.clearfix:before,
+.clearfix:after {
+   content: "";
+   display: table;
+   clear: both;
+}
+.container {
+   padding: 0 2%;
+   margin: 0 auto;
+   width: 100%;
+}
+
+section {
+   padding: 2rem 0;
+}
+
+.text-shadow {
+	text-shadow: 0.04em 0.05em #656565;
+}
+
+.fontPD {
+	font-family: 'Playfair Display', serif;
+}
+
+.fontR {
+	font-family: 'Raleway', sans-serif;
+}
+
+img {
+   height: auto;
+   max-width: 100%;
+}
+
+/*FONT-FACE for Raleway*/
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/raleway-medium-webfont.eot');
+    src: url('../fonts/raleway-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-medium-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-medium-webfont.woff') format('woff'),
+         url('../fonts/raleway-medium-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-medium-webfont.svg#ralewaymedium') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/raleway-mediumitalic-webfont.eot');
+    src: url('../fonts/raleway-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-mediumitalic-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-mediumitalic-webfont.woff') format('woff'),
+         url('../fonts/raleway-mediumitalic-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-mediumitalic-webfont.svg#ralewaymedium_italic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/raleway-lightitalic-webfont.eot');
+    src: url('../fonts/raleway-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-lightitalic-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-lightitalic-webfont.woff') format('woff'),
+         url('../fonts/raleway-lightitalic-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-lightitalic-webfont.svg#ralewaylight_italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('s-light-webfont.eot');
+    src: url('../fonts/raleway-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-light-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-light-webfont.woff') format('woff'),
+         url('../fonts/raleway-light-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-light-webfont.svg#ralewaylight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*FONT-FACE for playfair display*/
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../fonts/playfairdisplay-bold-webfont.eot');
+    src: url('../fonts/playfairdisplay-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/playfairdisplay-bold-webfont.woff2') format('woff2'),
+         url('../fonts/playfairdisplay-bold-webfont.woff') format('woff'),
+         url('../fonts/playfairdisplay-bold-webfont.ttf') format('truetype'),
+         url('../fonts/playfairdisplay-bold-webfont.svg#playfair_displaybold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../fonts/playfairdisplay-italic-webfont.eot');
+    src: url('../fonts/playfairdisplay-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/playfairdisplay-italic-webfont.woff2') format('woff2'),
+         url('../fonts/playfairdisplay-italic-webfont.woff') format('woff'),
+         url('../fonts/playfairdisplay-italic-webfont.ttf') format('truetype'),
+         url('../fonts/playfairdisplay-italic-webfont.svg#playfair_displayitalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../fonts/playfairdisplay-regular-webfont.eot');
+    src: url('../fonts/playfairdisplay-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/playfairdisplay-regular-webfont.woff2') format('woff2'),
+         url('../fonts/playfairdisplay-regular-webfont.woff') format('woff'),
+         url('../fonts/playfairdisplay-regular-webfont.ttf') format('truetype'),
+         url('../fonts/playfairdisplay-regular-webfont.svg#playfair_displayregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../fonts/playfairdisplay-bolditalic-webfont.eot');
+    src: url('../fonts/playfairdisplay-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/playfairdisplay-bolditalic-webfont.woff2') format('woff2'),
+         url('../fonts/playfairdisplay-bolditalic-webfont.woff') format('woff'),
+         url('../fonts/playfairdisplay-bolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/playfairdisplay-bolditalic-webfont.svg#playfair_displaybold_italic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+/*HEADER*/
+
+.header {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top: 1rem;
+	padding-bottom: 0;
+	position: fixed;
+	background-color: white;
+	z-index: 50;
+	width: 100%;
+}
+
+.logo {
+	align-self: flex-start;
+	flex: 0 1 50%;
+	padding-left: 1rem;
+}
+
+.logo img {
+	max-width: 65%;
+	padding-bottom: 1rem;
+}
+
+.cart {
+	/*order:3;*/
+	align-self: flex-end;
+	/*width: 50%;*/
+	/*height: 50px;*/
+	flex: 0 1 50%;
+	position: relative;
+}
+
+.cart img {
+	max-width: 24%;
+	margin-left: 74%;
+	padding-bottom: 1rem;
+
+}
+
+.navbar {
+	margin-bottom: 0px !important;
+	align-self: center;
+	order: 2;
+	flex: 1 0 auto;
+	font-size: 1.3rem;
+}
+
+.navbar ul{
+	text-align: center;
+	padding-top: 1rem;
+	border-top: 1px solid #7d7d7d;
+}
+
+.navbar li {
+	display: inline-block;
+	text-transform: uppercase;
+	/*margin: auto;*/
+}
+
+.navbar a {
+	color: #ff4040;
+	padding: 0 1rem;
+}
+
+#cartQty {
+	display:;
+	background-color: red;
+	border-radius: 20px;
+	border:none;
+	color: white;
+	position: absolute;
+	top:-1px;
+	left:10px;
+	width:15px;
+	height: 15px;
+	padding-left:4.4px;
+	margin-left: 84%;
+	font-size: 1.1rem;
+
+}
+/*BANNER SECTION*/
+
+.banner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: url("assets/images/banner.jpg") center no-repeat;
+	background-size: cover;
+	position: relative;
+	min-height: 80vh;
+}
+
+.banner-text {
+	color: white;
+	/*font-weight: bold;*/
+	/*text-align: center;*/
+	/*padding: 18% 0;*/
+}
+
+.banner-h1 {
+   /* font-family: 'Raleway', sans-serif;*/
+   /*font-family: sans-serif;*/
+    font-size: 1.7rem;
+    margin-top: 3rem;
+}
+
+.banner-h2 {
+    /*font-family: 'Playfair display', serif;*/
+    font-size: 2.1rem;
+    /*margin-top: 4rem;*/
+}
+
+/*CTA SECTION*/
+
+.about {
+	display: flex;
+	text-align: center;
+	flex-wrap: wrap;
+	/*border-bottom: 1px solid #A9A9A9;*/
+  	justify-content: center;
+  	align-items: center;
+}
+
+.h3-text {
+	font-size: 3.3rem;
+	margin:3% 0;
+	font-style: italic;
+	font-weight: normal;
+	font-family: 'Playfair display', serif;
+	color: #404040;
+	text-align: center;
+	padding-bottom: 2rem;
+}
+span {
+	font-style: normal;
+	font-weight: bold;
+	font-family: 'Playfair display', serif;
+}
+
+.h3-text p {
+	font-size: 1.35rem;
+	padding-top: 5%;
+	line-height: 250%;
+	font-style: normal;
+	text-align: center;
+}
+
+/*CATEGORIES SECTION*/
+
+/*CATEGORIES SECTION*/
+
+.Category {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /*width: 100%;*/
+}
+
+.wide {
+    flex: 2 0 100%;
+    max-width: 120%;
+    border: 4px solid white;
+   /* position: relative;*/
+}
+
+.square {
+    flex: 1 0 50%;
+    max-width: 50%;
+    border: 4px solid white;
+   /* position: relative;*/
+}
+
+.category-name {
+	color: white;
+	text-transform: uppercase;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	/*text-shadow: 2px 2px 4px black;*/
+	font-size: 2rem;
+	min-height: 25vh;
+	text-align: center;
+	transform: translateY(50%);
+}
+.wide.cpu {
+	background: url("assets/images/laptop-category.jpg") no-repeat center;
+	background-size: cover;
+}
+
+.square.tv {
+	background: url("assets/images/tv-category.jpg") no-repeat center;
+	background-size: cover;
+}
+
+.square.home-audio {
+	background:url("assets/images/home-audio-category.jpg") no-repeat center;
+	background-size: cover;
+}
+
+.square.tablets {
+		background:url("assets/images/tablet-category.jpg") no-repeat center;
+		background-size: cover;
+}
+
+.square.desktop { background: url("assets/images/desktop-category.jpg") no-repeat center;
+		background-size: cover;
+}
+
+.wide.cell {background: url("assets/images/cell-category.jpg") no-repeat center;
+		background-size: cover;
+}
+
+.product-header {
+	color: #545454;
+	text-align: center;
+	text-transform: uppercase;
+}
+.owl-theme .owl-nav [class*="owl-"] {
+	display: none !important;
+}
+
+.green-btn {
+	background-color: green;
+	color: white;
+}
+
+.owl-theme .owl-nav [class*="owl-"] {
+	display: none !important;
+}
+
+.addtocart {
+	background-color: black;
+	color: white;
+	border-radius: 25px;
+	border:none;
+	width:90px;
+}
+
+/*SUBSCRIPTION SECTION*/
+
+.signup {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	flex-flow: row;
+	background-color: green;
+	min-height: 42vh;
+	padding-bottom: 4rem;
+
+}
+
+.signup .h3-text {
+	color: white;
+	padding-bottom: 2rem;
+}
+
+.signup p {
+	color: white;
+	line-height: 2;
+	text-align: center;
+}
+
+.sub-Form {
+	padding: 0.3rem;
+	border-radius: 50px;
+	background-color: white;
+	width: 72%;
+	margin-top: 15px;
+	text-align: center;
+	display: inline-block;
+	transform: translate(18%);
+}
+
+
+.email {
+	border-radius: 10px;
+    padding: 5px 10px;
+    width: 65%;
+    min-height: 1.25rem;
+    float: left;
+    border: none;
+}
+
+.submitButton {
+	border-radius: 50px;
+    background-color: #ff4040;
+    width: 25%;
+    font-size: 1rem;
+    padding: 3%;
+    float: right;
+    color: white;
+    border:none;
+}
+
+/*FOOTER SECTION*/
+
+.footer{
+	background-color: #262626;
+	color: white;
+	min-height: 30vh;
+	font-family: 'Playfair Display Web', serif;
+	font-size: 1.6rem;
+	text-align: center;
+	padding-top: 6vh;
+}
+.wrapper {
+display: flex;
+flex-direction: column;
+}
+
+
+.media{
+	display: none;
+}
+
+li{
+	display: inline;
+	margin:1vh;
+}
+.social{
+	margin: 2vh;
+	text-decoration: none;
+}
+
+.social a {
+	color: white;
+}
+
+/*social*/
+
+.pinterest{
+	width: 20px;
+}
+.instagram{
+	width:20px;
+}
+.facebook{
+	width:20px;
+}
+.twitter{
+	width: 20px;
+}
+.google{
+	width: 20px;
+}
+
+
+/*TABLET RESPONSIVENESS*/
+@media only screen and (min-width: 601px){
+.header {
+	flex-wrap: nowrap;
+	padding-top: 3rem;
+}
+
+
+.navbar {
+    padding-top: 1rem;
+    margin-bottom: 0;
+    transform: translate(31px);
+    font-size: 1.5rem;
+}
+
+.logo img {
+    max-width: 135%;
+    padding: 1.5rem;
+}
+
+
+.navbar ul {
+	border:none;
+	padding: 0;
+}
+.cart {order:3;}
+
+.cart img {
+    max-width: 41%;
+    margin-left: 50%;
+}
+
+#cartQty {
+    top: 2px;
+    left: -10px;
+    width: 23px;
+    height: 23px;
+    padding-left: 8.5px;
+}
+
+/*#cartQty {
+	top: 2px;
+	left: -22px;
+	width: 17px;
+	height: 17px;
+	padding-left: 5.5px;
+}*/
+
+.banner-h2 {
+    font-size: 5.6rem;
+}
+
+.banner-h1 {
+    font-size: 1.7rem;
+}
+
+.h3-text {
+    font-size: 4rem;
+}
+
+.h3-text p {
+    font-size: 1.6rem;
+}
+
+.category-name {
+    font-size: 3rem;
+    transform: translateY(43%);
+}
+
+.wide {
+    /*min-height: 36vh;*/
+    flex-basis: 50%;
+}
+
+.square{
+	/*min-height: 36vh;*/
+	flex-basis: 25%;
+}
+
+.category-name {
+	min-height: 20vh;
+}
+
+.owl-carousel {
+    padding: 2rem 0;
+}
+
+.signup .h3-text {
+    padding-bottom: 4rem;
+}
+
+.signup {min-height: 31vh;}
+
+.signup p {font-size: 1.7rem;}
+
+.email {
+    padding-top: 7px;
+    min-height: 2vh;
+    font-size: 1.5rem;
+}
+
+.submitButton {
+	font-size: 1.3rem;
+	padding: 1.5%;
+}
+
+.social{
+	margin: 5vh;
+}
+#contact{
+	text-align: left;
+}
+.mail{
+	font-size: 1.25rem;
+}
+
+.wrapper{
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.social ul {
+	text-align: initial;
+}
+
+.social li {
+      display: block;
+   }
+
+.media {
+      display: inline;
+   }
+
+
+}
+
+@media only screen and (min-width: 1240px){
+
+.container {
+      max-width: 1240px;
+}
+
+.logo img {
+    max-width: 60%;
+    padding: 0.5rem;
+}
+
+.navbar {
+    font-size: 2rem;
+}
+
+.cart img {
+    max-width: 20%;
+    margin-left: 70%;
+}
+
+#cartQty {
+    top: 2px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    padding-left: 6.5px;
+}
+
+.banner {
+    background: linear-gradient(rgba(0,0,0,0.5),transparent),
+    url("assets/images/banner.jpg") center no-repeat;
+    background-size: cover;
+    min-height: 110vh;
+}
+
+.banner-h1 {
+    font-size: 2.7rem;
+}
+.banner-h2 {
+    font-size: 7.6rem;
+}
+
+.h3-text {
+    font-size: 6rem;
+}
+
+.h3-text p {
+    font-size: 2.5rem;
+}
+
+.wide {
+    min-height: 55vh;
+}
+
+.square {
+    min-height: 55vh;
+}
+
+.category-name {
+    font-size: 4rem;
+    min-height: 52vh;
+}
+
+.popular-item {padding-bottom: 3rem;}
+.signup { min-height: 85vh;}
+
+.signup p {
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
+}
+
+.sub-Form {
+    padding: 0.6rem; }
+
+.email {
+	padding-top: 10px;
+    font-size: 2rem;
+}
+
+.submitButton {
+    font-size: 1.78rem;}
+
+.footer {
+    min-height: 56vh;
+    font-size: 2.2rem;
+}
+
+#contact { padding-left: 4rem;}
+
+.social { padding-right: 4rem;}
+
+}

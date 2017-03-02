@@ -1,22 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
-    <title>Insert your title here</title>
-    <link rel="icon" type="image/ico" href="favicon.ico" />
-</head>
-<body>
-<h1>Hey! It's ES6</h1>
+        <link rel="stylesheet" type="text/css" href="reset.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--font awesome-->
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> <!--font: raleway, sans-serif-->
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway" rel="stylesheet"> <!-- font: Playfair Display', serif-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--this the viewport meta tag to make the site mobile responsive -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> <!-- bootstrap link -->
 
-<!-- test code -->
-<script>
-    let test = 'hello es6 world';
-    let square = x => x * x;
+    <title>Shopping cart</title>
+  </head>
+  <body>
 
-    console.log('square is ' + square);
-    console.log(test);
-</script>
-<!-- end code insert -->
-<script src="build/bundle.js"></script>
+  <!-- HEADER SECTION -->
+
+  	 <header class="header">
+        <div class="logo">
+            <img src="assets/images/aloha-logo.svg" alt="logo">
+        </div>
+        <nav class= "navbar">
+        	<ul>
+        		<li><a href="#">About</a></li>
+        		<li><a href="#">Shop</a></li>
+        		<li><a href="#">Featured</a></li>
+        		<li><a href="#">Updates</a></li>
+        	</ul>
+        </nav>
+        <div class= "cart">
+            <img class="cartlogo" src="assets/images/cart-icon.svg" alt="cart icon">
+            <input id="cartQty" type="text" name="cartQuantity" value="0">
+        </div>
+      </header>
+
+<!-- BANNER SECTION -->
+<section class="banner">
+  <div class="container banner-text">
+    <h1 class="banner-h1">WANT TO BUY</h1>
+        <h2 class="banner-h2 text-shadow">COOL SHIT FROM BEST BUY?</h2>
+        <div class="green-border">
+            <a href="#">Click Here</a>
+      </div>
+  </div>
+  </section>
+
+ <!-- CTA SECTION -->
+    <section class="about">
+        <div class="container">
+            <h3 class="h3-text"> Hand Crafted <span>Styles</span>
+                <p class="fontR">Aloha Apparel Co. sells only the finest ready-to-travel clothing. Browse our current selection of products or sign-up for updates below.</p>
+            </h3>
+        </div>
+    </section>
+
+    <!--CATEGORIES SECTION -->
+
+     <section id="product-category">
+       <div class="Category">
+         <div class="wide cpu">
+           <p class="category-name">LAPTOPS/ULTRABOOKS</p>
+         </div>
+         <div class="square tv">
+           <p class="category-name">4K TV'S</p>
+         </div>
+         <div class="square home-audio">
+           <p class="category-name">HOME-AUDIO</p>
+         </div>
+         <div class="square tablets">
+           <p class="category-name">TABLETS</p>
+         </div>
+         <div class="square desktop">
+           <p class="category-name">DESKTOPS</p>
+         </div>
+         <div class="wide cell">
+           <p class="category-name">CELLPHONES</p>
+         </div>
+       </div>
+     </section>
+     <link rel="stylesheet" type="text/css" href="slider/owl.carousel.min.css">
+          <link rel="stylesheet" type="text/css" href="slider/owl.theme.default.min.css">
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+           <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+     <!-- PRODUCTS SECTION -->
+        <section id="products" class="container">
+          <div class="product-header">
+            <h3>You like stuff?</h3>
+            <h5> We got stuff</h5>
+          </div>
+          <div class="owl-carousel owl-theme centerStuff"></div>
+        </section>
+
+       <!-- SUBSCRIPTION SECTION -->
+    <section class="signup">
+        <div class="container">
+            <h3 class="h3-text"> Sign-Up for <span>Updates</span></h3>
+          <p>Stay updated on our latest product releases, be first to find out about upcoming sales, and get free style tips from our blog. Unsubscribe at anytime.</p>
+
+          <div class="sub-Form">
+              <input class="email floatL border-none" type="text" placeholder="Your Email">
+              <input class="submitButton" type="submit" value="Subscribe">
+          </div>
+        </div>
+    </section>
+
+    <footer class="clear footer">
+			<div class="wrapper">
+   				 <div id="contact" class="social">
+	   				<address>
+					<p class="address-padding">&copy; 2016 Aloha Apparel Co.<br>Powered bt HTML and CSS.</p>
+					<p class="address-padding">604-604-6040.
+					<a href="mailto:info@alohaapparel.com">info@alohaapparel.com</a></p>
+					<p>1490 W Broadway<br>Vancouver, BC, Canada</p>
+					</address>
+				</div>
+    			<div id="social-media" class="social fontR">
+	   				 <ul>
+						<li><a href="#" class="textdecoration"><i class="fa fa-facebook facebook"></i><span class="media">    Facebook</span></a></li>
+						<li><a href="#" class="textdecoration "><i class="fa fa-twitter twitter"></i><span class="media">    Twitter</span></a></li>
+						<li><a href="#" class="textdecoration"><i class="fa fa-instagram instagram"></i><span class="media">    Instagram</span></a></li>
+						<li><a href="#" class="textdecoration"><i class="fa fa-pinterest pinterest"></i><span class="media">    Pinterest</span></a></li>
+						<li><a href="#" class="textdecoration"><i class="fa fa-google-plus google"></i><span class="media">      Google+</span></a></li>
+					</ul>
+				</div>
+  			</div>
+
+  			<script src="slider/owl.carousel.min.js"></script>
+
+		</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+     <script src="src/owl.carousel.min.js"></script>
+     <script src="dist/bundle.js"></script>
+
+
 </body>
 </html>
