@@ -34,7 +34,7 @@ export default class CatalogView{
 
     // to add products to the carousel, we call the function to do so, and we pass it poducts (aka product data), and the App
     addProductsToCarousel(products,theApp){
-        this.theApp = theApp; // now assining the catalog.theApp = App.js there by linking app details to catalog
+        this.theApp = theApp; // now assigning the catalog.theApp = App.js there by linking app details to catalog
 
         // if there are no products, then do noting-> nothing to display in carousel
         if (products === undefined || products == null){
@@ -164,7 +164,7 @@ export default class CatalogView{
 
     }
 
-    //quickview butto's function
+    //Quickview button's function
     detailedDescription(products,theApp){
       //let self = this; //this is supposed to be this.catalogView  but it wouldnt let him, so he just renamed it to self
       //this.call = this;
@@ -185,15 +185,18 @@ export default class CatalogView{
           let img = currentProducts.image;
           let name = currentProducts.name;
           let price = currentProducts.regularPrice;
-          
+
         output = `<div class="Item-content">
-                    <div class="close">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+                    <div>
                        <img class="cartimage" height="300" width="300" src=${img}>
                     </div >
-                    <div class=" textcenter">
+                    <div class="textcenter">
                         <h3 class="black"> ${name}</h3>
                         <p class="red">$ ${price}</p>
-                        <button class="addToCart" type="button" data-sku=${productsSku} >Add to cart</button>
+                        <button class="addToCart" data-sku=${productsSku} >Add to cart</button>
                     </div>
                   </div>`;
             }
@@ -202,12 +205,12 @@ export default class CatalogView{
 
     $(".quickView").html(output); //append the quickview display
     $(".quickView").fadeIn(); //display into the quickview
+    $(document).on("click",".close",this,function(){$(".quickView").fadeOut()});
         let addToCartButton = document.getElementsByClassName('addToCart');
         // console.log(addToCartButton);
         // console.log(self.onClickCartButton);
         // console.log(self.theApp);
           addToCartButton[0].addEventListener("click",this.catalogView.onClickCartButton(this.catalogView.theApp), false);
-
     }
 
     }
