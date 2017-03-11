@@ -34,21 +34,25 @@
         </div>
       </header>
 
-      <!--  SHOPPING CART BASKET DISPLAY-->
-      <section class="ShoppingCart">
+      <!--  SHOPPING CART BASKET DISPLAY. output from shoppingcartview.js-->
+      <section class="ShoppingCart" style="height:550px;overflow-y: auto;">
+        <div class="Item-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
           <div>
             <p class= "urCart textcenter"> Your Cart </p>
           </div>
 
-          <div class="shoppingCartInfo marginleftright10"></div>
+          <div class="shoppingCartInfo"></div>
 
-             <div class="marginleftright10">
+           <div class="flex">
                  <button id="clearSessionStorage"> Clear Cart </button>
-                  <button class="close closeCart" type="button"> Close </button>
                  <button id="updateCart"> Update Cart </button>
                  <button id="GoToCheckOut">  Checkout  </button>
              </div>
-             <div class="shoppingCartTotal flex font25"></div>
+             <div class="shoppingCartTotal"></div>
+      </div>
       </section>
 
 <!-- BANNER SECTION -->

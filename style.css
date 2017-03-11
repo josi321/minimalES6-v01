@@ -335,6 +335,11 @@ span {
     text-align: center;
 }
 
+.modal-body{
+  max-height: 420px;
+    overflow-y: auto;
+}
+
 /*CATEGORIES SECTION*/
 
 .Category {

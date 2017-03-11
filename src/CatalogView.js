@@ -143,8 +143,6 @@ export default class CatalogView{
         }
 
         $(".itemAddedToCart").fadeIn();
-
-
         $("#cartQty").show(); //shows the red circle on cart
         let current_val = sessionStorage.getItem("Quantity"); //shows the number on the red circle based on the value in the sessionStorage -->Quantity is a property in the sessionStorage
         $("#cartQty").val(current_val);
@@ -153,7 +151,7 @@ export default class CatalogView{
         theApp.shoppingCartView.cartshow(theApp.products,theApp); //passing the products and the app
 
 
-        // theApp.shoppingCart.updateQuantityofItemInCart(theSku,theQuantity);
+        theApp.shoppingCart.updateQuantityofItemInCart(theSku,theQuantity);
 
          //now this passes the the sku from Catalogview to the app and then to shoppingcart
     // we are going to pass the app from the app.js by sending the app from addprocuctsToCarousel in the app
@@ -187,9 +185,9 @@ export default class CatalogView{
           let price = currentProducts.regularPrice;
 
         output = `<div class="Item-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        </div>
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
                     <div>
                        <img class="cartimage" height="300" width="300" src=${img}>
                     </div >

@@ -13,6 +13,7 @@ export default class ShoppingCartView {
 
 	}
 
+// SHOPPING CART INFO IN THE CART BASKET!!!!
 	cartshow (products,theApp){
 
 		let output ="";
@@ -40,14 +41,26 @@ export default class ShoppingCartView {
 					subTotal = price * current_qty;
 					// console.log(current_qty);
 
-					output += ` <div class="flex">
-								<img class='cartimage' height="100" width="100" src=${img}>
-								<h3 class="black"> ${name}</h3>
-								<p class="red Myvalue value">$ ${price}</p>
-								<input type="number" value=${current_qty} id="QQv_${productsSku}" class="black shoppingCartInput" min="0" max="100">
-								<p class="black Myvalued value" id=${subTotal}>$ ${subTotal}</p>
-								<button	class="delete" type="button" id="delete_${productsSku}" name="${productsSku}" > Remove </button>
-								</div>`;
+					output +=
+					`
+						<div class="modal-body" style="max-height: 500px;overflow-y: auto;">
+						<img class='cartimage textcenter' height="200" width="200" src=${img}>
+						 			<h3> ${name}</h3>
+						 			<p>$ ${price}</p>
+						 			<input type="number" value=${current_qty} id="QQv_${productsSku}" class="black shoppingCartInput" min="0" max="100">
+						 			<p id=${subTotal} class="subtotal"> Subtotal: $ ${subTotal}</p>
+						 			<button	class="delete" type="button" id="delete_${productsSku}" name="${productsSku}" > Remove </button>
+						</div>`
+
+
+					// output += ` <div class="flex">
+					// 			<img class='cartimage textcenter' height="200" width="200" src=${img}>
+					// 			<h3 class="black"> ${name}</h3>
+					// 			<p class="red Myvalue value">$ ${price}</p>
+					// 			<input type="number" value=${current_qty} id="QQv_${productsSku}" class="black shoppingCartInput" min="0" max="100">
+					// 			<p class="black Myvalued value" id=${subTotal}>$ ${subTotal}</p>
+					// 			<button	class="delete" type="button" id="delete_${productsSku}" name="${productsSku}" > Remove </button>
+					// 			</div>`;
 					}	}
 
 			}
@@ -57,8 +70,9 @@ export default class ShoppingCartView {
 
 
 	$(".shoppingCartInfo").html(output);
+	$(document).on("click",".close",this,function(){$(".ShoppingCart").fadeOut()});
 
-	let TotalOfCart = document.getElementsByClassName("Myvalued");
+	let TotalOfCart = document.getElementsByClassName("subtotal");
 
 	console.log(TotalOfCart);
 	let FinalPrice = parseInt(0);
@@ -68,7 +82,7 @@ export default class ShoppingCartView {
 			console.log(totalnumber);
 		}
 		console.log(FinalPrice);
-	let addingFinalPrice = `<p class='black font18'>Total Price: $ ${FinalPrice}</p>`;
+	let addingFinalPrice = `<p>Total Price: $ ${FinalPrice}</p>`;
 	$('.shoppingCartTotal').html(addingFinalPrice);
 
      $(".itemAddedToCart").fadeOut(2500);
