@@ -47,7 +47,7 @@ export default class ShoppingCartView {
 						<img class='cartimage textcenter' height="200" width="200" src=${img}>
 						 			<h3> ${name}</h3>
 						 			<p>$ ${price}</p>
-						 			<input type="number" value=${current_qty} id="QQv_${productsSku}" class="black shoppingCartInput" min="0" max="100">
+						 			<input type="number" value=${current_qty} id="Qv_${productsSku}" class="black shoppingCartInput" min="0" max="100">
 						 			<p id=${subTotal} class="subtotal"> Subtotal: $ ${subTotal}</p>
 						 			<button	class="delete" type="button" id="delete_${productsSku}" name="${productsSku}" > Remove </button>
 						</div>`

@@ -4,6 +4,7 @@ export default class ShoppingCart{
         // console.log("creating shopping cart");
         this.itemskunumber = null;
         this.theDeleteButton =null;
+        // this.updateCartQuantity;
         //// creating the variable to input the this.theApp = the
         if(Storage){
             // you can create a shoppingCart!
@@ -12,10 +13,11 @@ export default class ShoppingCart{
         {
             console.log("Error! SessionStorage not supported in your browser!");
         }
+
     }
 
     initShoppingCart(){
-        // console.log("finished creating shopping cart");
+        // console.log("fipnished creating shopping cart");
 
     }
 
@@ -88,16 +90,17 @@ console.log(theSku);
 
 
     updateQuantityofItemInCart(theApp){
-        let self = this;
+
+      let self= this;
        return function(e){
-        // console.log(self);
+
         self.updateCartQuantity(theApp);
 
         }
     }
 
-    updateCartQuantity (theApp){
-
+    updateCartQuantity(theApp,sku){
+      console.log('update function');
 
      let products = theApp.products;
 
