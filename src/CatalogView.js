@@ -192,8 +192,8 @@ export default class CatalogView{
                        <img class="cartimage" height="300" width="300" src=${img}>
                     </div >
                     <div class="textcenter">
-                        <h3 class="black"> ${name}</h3>
-                        <p class="red">$ ${price}</p>
+                        <h3> ${name}</h3>
+                        <p>$ ${price}</p>
                         <button class="addToCart" data-sku=${productsSku} >Add to cart</button>
                     </div>
                   </div>`;
@@ -208,6 +208,7 @@ export default class CatalogView{
         // console.log(addToCartButton);
         // console.log(self.onClickCartButton);
         // console.log(self.theApp);
+        console.log("quickview add to cart button");
           addToCartButton[0].addEventListener("click",this.catalogView.onClickCartButton(this.catalogView.theApp), false);
     }
 

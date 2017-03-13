@@ -51,6 +51,7 @@ export default class App{
         //addProductsToCarousel is a function in catalogView
           this.catalogView.addProductsToCarousel(this.products, this);
           // cartshow is a function we call to display the cart items in the cart
+          // this is the display cart view function
           this.shoppingCartView.cartshow(this.products,this);
 
 
