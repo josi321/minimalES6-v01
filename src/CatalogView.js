@@ -63,7 +63,7 @@ export default class CatalogView{
             // so that if you 'click' on the image, it would pop up a quick-view
             // window and you can use the sku.
             let newImg = document.createElement("div");
-            newImg.setAttribute("style",`background-image: url('${product.image}');height:200px; background-size:contain;background-repeat:no-repeat;background-position:center;`);
+            newImg.setAttribute("style",`background-image: url('${product.image}');height:200px; background-size:contain;background-repeat:no-repeat;background-position:center; overflow:hidden;`);
             newImg.setAttribute("alt", product.name); // this works too
             newImg.setAttribute("data-sku",product.sku);
 
@@ -75,12 +75,14 @@ export default class CatalogView{
             // newPara.appendChild(newParaTextNode);
 
             // create a new H3 tag to show the name
-            let newH3Tag = document.createElement("h3");
-            let newH3TagTextNode = document.createTextNode(product.name);
-            newH3Tag.appendChild(newH3TagTextNode);
+            let newpTag = document.createElement("p");
+            let newpTagTextNode = document.createTextNode(product.name);
+            newpTag.setAttribute("style",`text-transform:uppercase; text-align:center; color:grey;`);
+            newpTag.appendChild(newpTagTextNode);
 
             let newPricePara = document.createElement("p");
             newPricePara.setAttribute("class","price");
+            newPricePara.setAttribute("style",`color:green; text-align:center;`);
             let newPriceParaTextNode = document.createTextNode("$ "+product.regularPrice);
             newPricePara.appendChild(newPriceParaTextNode);
 
@@ -88,6 +90,7 @@ export default class CatalogView{
             quickviewBtn.setAttribute("id",`qv_${product.sku}`); //target the id qv_sku
             quickviewBtn.setAttribute("data-sku",product.sku);
             quickviewBtn.setAttribute("type","button");
+            quickviewBtn.setAttribute("style", `width:12rem; position:relative; text-align:center; border: 1px solid green; background-color:white; color: grey; padding:2%;`);
             let quickviewBtnTextNode = document.createTextNode("Quick View");
             quickviewBtn.appendChild(quickviewBtnTextNode);
             //addEventListener-->once you click the button, then do the function aka quickview function
@@ -97,6 +100,7 @@ export default class CatalogView{
             addToCartButton.setAttribute("id",`cart_${product.sku}`);
             addToCartButton.setAttribute("data-sku",product.sku);
             addToCartButton.setAttribute("type","button");
+            addToCartButton.setAttribute("style", "width:12rem; position:relative; text-align:center; border: 1px solid green; background-color:green; color:white; padding:2%;");
             let addToCartButtonTextNode = document.createTextNode("Add to cart");
             addToCartButton.appendChild(addToCartButtonTextNode);
             // <button id='cart_${product.sku}' data-sku="" type='button'> add to cart </button>
@@ -108,7 +112,7 @@ export default class CatalogView{
             // now that we've created the html structure for products display, we need to append the changes
             newDiv.appendChild(newImg);
             // newDiv.appendChild(newPara);
-            newDiv.appendChild(newH3Tag);
+            newDiv.appendChild(newpTag);
             newDiv.appendChild(newPricePara);
             newDiv.appendChild(quickviewBtn);
             newDiv.appendChild(addToCartButton);
@@ -194,7 +198,7 @@ export default class CatalogView{
                     <div class="textcenter">
                         <h3> ${name}</h3>
                         <p>$ ${price}</p>
-                        <button class="addToCart" data-sku=${productsSku} >Add to cart</button>
+                        <button class="addToCart" data-sku=${productsSku};>Add to cart</button>
                     </div>
                   </div>`;
             }
