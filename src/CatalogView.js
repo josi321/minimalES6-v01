@@ -164,57 +164,133 @@ export default class CatalogView{
       // console.log(this);
         return eventHandler;
 
-    }
+    };
 
     //Quickview button's function
-    detailedDescription(products,theApp){
-      //let self = this; //this is supposed to be this.catalogView  but it wouldnt let him, so he just renamed it to self
-      //this.call = this;
-       let output =""; //make the output be nothing, then we later appended data to it
+   detailedDescription(products,theApp){
+     //let self = this; //this is supposed to be this.catalogView  but it wouldnt let him, so he just renamed it to self
+     //this.call = this;
+      let output =""; //make the output be nothing, then we later appended data to it
 
-      return function(e) {
+     return function(e) {
 
-      let dataSku = e.target.getAttribute("data-sku")
+     let dataSku = e.target.getAttribute("data-sku")
 
-      console.log(e);
-      console.log(dataSku);
+     console.log(e);
+     console.log(dataSku);
 
-      for (let p=0;p<products.length;p++) {
-        let currentProducts = products[p]; // currentProducts is the jsondata product (all the data bbws)
-        let productsSku = currentProducts.sku; // ex productsSku = currentProducts[0].sku --> currentProducts[0].1234455
-        if (currentProducts.sku.toString() == dataSku.toString()) {
-          //if the skus matches, then let img= to the currentProducts's img, name, price
-          let img = currentProducts.image;
-          let name = currentProducts.name;
-          let price = currentProducts.regularPrice;
+     for (let p=0;p<products.length;p++) {
+       let currentProducts = products[p]; // currentProducts is the jsondata product (all the data bbws)
+       let productsSku = currentProducts.sku; // ex productsSku = currentProducts[0].sku --> currentProducts[0].1234455
+       if (currentProducts.sku.toString() == dataSku.toString()) {
+         //if the skus matches, then let img= to the currentProducts's img, name, price
+         let img = currentProducts.image;
+         let name = currentProducts.name;
+         let price = currentProducts.regularPrice;
 
-        output = `<div class="Item-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    </div>
-                    <div>
-                       <img class="cartimage" height="300" width="300" src=${img}>
-                    </div >
-                    <div class="textcenter">
-                        <h3> ${name}</h3>
-                        <p>$ ${price}</p>
-                        <button class="addToCart" data-sku=${productsSku};>Add to cart</button>
-                    </div>
-                  </div>`;
-            }
+       output = `<div class="Item-content">
+                   <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   </div>
+                   <div>
+                      <img class="cartimage" height="300" width="300" src=${img}>
+                   </div >
+                   <div class="textcenter">
+                       <h3> ${name}</h3>
+                       <p>$ ${price}</p>
+                       <button class="addToCart" data-sku=${productsSku};>Add to cart</button>
+                   </div>
+                 </div>`;
+           }
 
-    }
+   }
 
-    $(".quickView").html(output); //append the quickview display
-    $(".quickView").fadeIn(); //display into the quickview
-    $(document).on("click",".close",this,function(){$(".quickView").fadeOut()});
-        let addToCartButton = document.getElementsByClassName('addToCart');
-        // console.log(addToCartButton);
-        // console.log(self.onClickCartButton);
-        // console.log(self.theApp);
-        console.log("quickview add to cart button");
-          addToCartButton[0].addEventListener("click",this.catalogView.onClickCartButton(this.catalogView.theApp), false);
-    }
+   $(".quickView").html(output); //append the quickview display
+   $(".quickView").fadeIn(); //display into the quickview
+   $(document).on("click",".close",this,function(){$(".quickView").fadeOut()});
+       let addToCartButton = document.getElementsByClassName('addToCart');
+       // console.log(addToCartButton);
+       // console.log(self.onClickCartButton);
+       // console.log(self.theApp);
+       console.log("quickview add to cart button");
+         addToCartButton[0].addEventListener("click",this.catalogView.onClickCartButton(this.catalogView.theApp), false);
+   }
 
-    }
+   }
 };
+
+//     //Quickview button's function
+//     detailedDescription(products,theApp){
+//       //let self = this; //this is supposed to be this.catalogView  but it wouldnt let him, so he just renamed it to self
+//       //this.call = this;
+//        let output =""; //make the output be nothing, then we later appended data to it
+//
+//       return function(e) {
+//
+//       let dataSku = e.target.getAttribute("data-sku")
+//
+//       console.log(e);
+//       console.log(dataSku);
+//
+//       for (let p=0;p<products.length;p++) {
+//         let currentProducts = products[p]; // currentProducts is the jsondata product (all the data bbws)
+//         let productsSku = currentProducts.sku; // ex productsSku = currentProducts[0].sku --> currentProducts[0].1234455
+//         if (currentProducts.sku.toString() == dataSku.toString()) {
+//           //if the skus matches, then let img= to the currentProducts's img, name, price
+//           let img = currentProducts.image;
+//           let name = currentProducts.name;
+//           let price = currentProducts.regularPrice;
+//
+//         output = `<div class="Item-content">
+//                     <div class="modal-header">
+//                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+//                     </div>
+//                     <div>
+//                        <img class="cartimage" height="300" width="300" src=${img}>
+//                     </div >
+//                     <div class="textcenter">
+//                         <h3> ${name}</h3>
+//                         <p>$ ${price}</p>
+//                         <button id="qv-${dataSku}" class="addToCart" data-sku=${productsSku};>Add to cart</button>
+//                     </div>
+//                   </div>`;
+//             }
+//
+//     }
+//
+//     $(".quickView").html(output); //append the quickview display
+//     if (document.getElementById(`qv-${dataSku}`) === null) {return}
+//     else
+//       {let quickviewAdd = document.getElementById(`qv-${dataSku}`);
+//         console.log("im in quickview add to cart");
+//         console.log(quickviewAdd);
+//         quickviewAdd.addEventListener("click", this.catalogView.quickAddtoCart(dataSku,this.theApp),false);
+//       }
+//
+//
+//     $(".quickView").fadeIn(); //display into the quickview
+//     $(document).on("click",".close",this,function(){$(".quickView").fadeOut()});
+//     }
+//   } //close the quickview function
+//
+//
+//
+//   quickAddtoCart(dataSku, theApp){
+//     return function(e){
+//       if (sessionStorage.getItem(dataSku) == undefined){
+//         sessionStorage.setItem(dataSku, 1);
+//         return
+//       }
+//       for (let i=0; i<sessionStorage.length; i++){
+//           let currentsku = sessionStorage.key(i);
+//
+//           if (currentsku.toString() == theSku.toString()) {
+//               let currentValue = sessionStorage.getItem(currentsku);
+//               currentValue = parseInt(currentValue);
+//               currentValue = currentValue +1;
+//               sessionStorage.setItem(currentsku,currentValue);
+//           }
+//       }
+//     }
+//   }; // ends quickAddtoCart function
+// };
